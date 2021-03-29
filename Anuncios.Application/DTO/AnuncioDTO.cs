@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Anuncios.Domain.Entities
+namespace Anuncios.Application.DTO
 {
-    public class Anuncio : Base
+    public class AnuncioDTO : BaseDTO
     {
         public string Descricao { get; set; }
         public byte[] Imagem { get; set; }
