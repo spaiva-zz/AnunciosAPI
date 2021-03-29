@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Services", "01 - Services", "{5CCEFFDD-FEAF-467C-BA26-92166810FEF7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Service", "01 - Service", "{5CCEFFDD-FEAF-467C-BA26-92166810FEF7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Application", "02 - Application", "{3BEBA279-41CD-4988-AF1F-CF34BD5626FE}"
 EndProject
@@ -11,15 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Domain", "03 - Domain"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Infra", "04 - Infra", "{83B72140-4D64-42A8-A543-759038FE39DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anuncios.Servico.API", "Anuncio.Servico.API\Anuncios.Servico.API.csproj", "{9C5D6F5E-A580-4C72-B4B4-684680E57240}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anuncios.Service.API", "Anuncios.Servico.API\Anuncios.Service.API.csproj", "{9C5D6F5E-A580-4C72-B4B4-684680E57240}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anuncios.Application", "Anuncios.Application\Anuncios.Application.csproj", "{3732E273-1988-46D5-A782-50C0BB55E1E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anuncios.Application", "Anuncios.Application\Anuncios.Application.csproj", "{3732E273-1988-46D5-A782-50C0BB55E1E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anuncios.Domain", "Anuncios.Domain\Anuncios.Domain.csproj", "{B66D5613-CB37-4A5D-B15B-E47FC1F94B38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anuncios.Domain", "Anuncios.Domain\Anuncios.Domain.csproj", "{B66D5613-CB37-4A5D-B15B-E47FC1F94B38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anuncios.Infra.Data", "Anuncios.Infra.Data\Anuncios.Infra.Data.csproj", "{5C723673-3898-434B-BB89-32A733974356}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anuncios.Infra.Data", "Anuncios.Infra.Data\Anuncios.Infra.Data.csproj", "{5C723673-3898-434B-BB89-32A733974356}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anuncios.Infra.IOC", "Anuncios.Infra.IOC\Anuncios.Infra.IOC.csproj", "{079A403B-4831-4EFE-887A-4D58DD6F1318}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anuncios.Infra.IOC", "Anuncios.Infra.IOC\Anuncios.Infra.IOC.csproj", "{079A403B-4831-4EFE-887A-4D58DD6F1318}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
