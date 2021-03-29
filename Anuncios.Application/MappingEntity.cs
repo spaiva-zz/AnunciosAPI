@@ -10,6 +10,8 @@ namespace Anuncios.Application
         {
             CreateMap<Cliente, ClienteDTO>();
             CreateMap<Anuncio, AnuncioDTO>();
+            CreateMap<ClienteDTO, Cliente>();
+            CreateMap<AnuncioDTO, Anuncio>();
         }
     }
 }

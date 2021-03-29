@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Domain", "03 - Domain"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Infra", "04 - Infra", "{83B72140-4D64-42A8-A543-759038FE39DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anuncios.Service.API", "Anuncios.Servico.API\Anuncios.Service.API.csproj", "{9C5D6F5E-A580-4C72-B4B4-684680E57240}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anuncios.Service.API", "Anuncios.Service.API\Anuncios.Service.API.csproj", "{9C5D6F5E-A580-4C72-B4B4-684680E57240}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anuncios.Application", "Anuncios.Application\Anuncios.Application.csproj", "{3732E273-1988-46D5-A782-50C0BB55E1E8}"
 EndProject

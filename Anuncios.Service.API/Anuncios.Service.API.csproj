@@ -12,6 +12,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anuncios.Application\Anuncios.Application.csproj" />
+    <ProjectReference Include="..\Anuncios.Infra.IOC\Anuncios.Infra.IOC.csproj" />
   </ItemGroup>
 
 
