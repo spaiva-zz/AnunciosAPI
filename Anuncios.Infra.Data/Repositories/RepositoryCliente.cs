@@ -1,5 +1,6 @@
 ﻿using Anuncios.Domain.Entities;
 using Anuncios.Domain.Intefaces.Repositories;
+using System.Linq;
 
 namespace Anuncios.Infra.Data.Repositories
 {

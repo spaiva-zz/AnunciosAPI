@@ -43,7 +43,12 @@ namespace Anuncios.Infra.Data.Repositories
         public void Update(T obj)
         {
             sqlContext.BeginTransaction();
-            sqlContext.Set<T>().Attach(obj);
+            var local = sqlContext.Set<T>().Local.FirstOrDefault(entry => entry.Id.Equals(obj.Id));
+
+            if (local != null)
+            {
+                sqlContext.Entry(local).State = EntityState.Detached;
+            }
             sqlContext.Entry(obj).State = EntityState.Modified;
             sqlContext.SendChanges();
         }
