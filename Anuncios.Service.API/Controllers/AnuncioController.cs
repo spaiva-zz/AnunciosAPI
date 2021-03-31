@@ -125,40 +125,20 @@ namespace Anuncios.Service.API.Controllers
             }
         }
 
-        [HttpPut]
-        [Authorize]
-        [Route("Atualizar")]
-        public ActionResult Put([FromBody] AnuncioDTO anuncioDTO)
-        {
-            try
-            {
-                if (anuncioDTO == null)
-                {
-                    return NotFound();
-                }
-
-                app.Update(anuncioDTO);
-                return Ok("Anúncio atualizado com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         [HttpDelete]
         [Authorize]
         [Route("Excluir")]
-        public ActionResult Delete([FromBody] AnuncioDTO anuncioDTO)
+        public ActionResult Delete(int Id)
         {
             try
             {
+                var anuncioDTO = app.GetById(Id);
                 if (anuncioDTO == null)
                 {
-                    return NotFound();
+                    return NotFound("Anúncio não encontrado!");
                 }
 
-                app.Update(anuncioDTO);
+                app.Remove(anuncioDTO);
                 return Ok("Anúncio removido com sucesso!");
             }
             catch (Exception ex)

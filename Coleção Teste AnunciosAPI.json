@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9a907482-a162-4a23-8f99-07df79789f96",
+		"_postman_id": "bab34873-687c-46d8-8d0d-6b2db92edd41",
 		"name": "AnunciosAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -155,7 +155,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/Cliente/Excluir",
+							"raw": "http://localhost:5000/Cliente/Excluir?Id=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -164,6 +164,12 @@
 							"path": [
 								"Cliente",
 								"Excluir"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
 							]
 						}
 					},
@@ -246,7 +252,9 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -301,62 +309,6 @@
 							"path": [
 								"Anuncio",
 								"Cadastrar"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Cadastro Anúncio Copy",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDk0MCwiZXhwIjoxNjE3MTY2NzQwLCJpYXQiOjE2MTcxNjQ5NDB9.sY5z--0ofovXTUXWpcxC0jjxBIFGcLfdCcePs04vlAI",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "Descricao",
-									"value": "Anúncio Teste Edição",
-									"type": "text"
-								},
-								{
-									"key": "ImageFile",
-									"type": "file",
-									"src": "/C:/Users/sha_p/Área de Trabalho/Screenshot_1.jpg"
-								},
-								{
-									"key": "IsAtivo",
-									"value": "true",
-									"type": "text"
-								},
-								{
-									"key": "Latitude",
-									"value": "-23.001977147303663",
-									"type": "text"
-								},
-								{
-									"key": "Longitude",
-									"value": "-47.137935790265885",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:5000/Anuncio/Atualizar",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"Anuncio",
-								"Atualizar"
 							]
 						}
 					},

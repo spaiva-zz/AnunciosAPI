@@ -87,16 +87,17 @@ namespace Anuncios.Service.API.Controllers
         [HttpDelete]
         [Authorize]
         [Route("Excluir")]
-        public ActionResult Delete([FromBody] ClienteDTO clienteDTO)
+        public ActionResult Delete(int Id)
         {
             try
             {
+                var clienteDTO = app.GetById(Id);
                 if (clienteDTO == null)
                 {
-                    return NotFound();
+                    return NotFound("Cliente não encontrado!");
                 }
 
-                app.Update(clienteDTO);
+                app.Remove(clienteDTO);
                 return Ok("Cliente removido com sucesso!");
             }
             catch (Exception ex)
