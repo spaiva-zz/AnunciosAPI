@@ -110,7 +110,7 @@ namespace Anuncios.Service.API.Controllers
         [Route("Login")]
         public async Task<ActionResult<dynamic>> Authenticate([FromBody] ClienteDTOAuthenticate clienteDTO)
         {
-            var clienteDTOLogin = app.GetBy().FirstOrDefault(c => c.Email.Equals(clienteDTO.Email) && c.Senha.Equals(clienteDTO.Senha));
+            var clienteDTOLogin = app.GetAll().FirstOrDefault(c => c.Email.Equals(clienteDTO.Email) && c.Senha.Equals(clienteDTO.Senha));
             if(clienteDTOLogin == null)
             {
                 return NotFound(new { message = "E-mail ou senha inválidos!" });

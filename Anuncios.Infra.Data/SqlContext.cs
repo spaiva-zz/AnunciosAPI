@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
-using System.Linq;
 
 namespace Anuncios.Infra.Data
 {
@@ -18,10 +17,6 @@ namespace Anuncios.Infra.Data
 
         public SqlContext(DbContextOptions<SqlContext> options) : base(options)
         {
-            if (Database.GetPendingMigrations().Count() > 0)
-            {
-                Database.Migrate();
-            }
         }
 
         public IDbContextTransaction BeginTransaction()

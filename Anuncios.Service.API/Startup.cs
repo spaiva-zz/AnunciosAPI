@@ -88,6 +88,11 @@ namespace Anuncio.Servico.API
                 app.UseDeveloperExceptionPage();
             }
 
+            using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                scope.ServiceProvider.GetService<SqlContext>().Database.Migrate();
+            }
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
