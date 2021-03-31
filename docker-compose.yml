@@ -18,3 +18,5 @@ services:
       environment:       
          SA_PASSWORD: "sa!@1234"       
          ACCEPT_EULA: "Y"
+      extra_hosts:
+         - "localhost:@ipLocal"
