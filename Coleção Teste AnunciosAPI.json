@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "9a907482-a162-4a23-8f99-07df79789f96",
+		"name": "AnunciosAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@email.com.br\",\r\n  \"senha\": \"admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/Cliente/Login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Cliente",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verifica Autenticação",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDQ5MywiZXhwIjoxNjE3MTY2MjkzLCJpYXQiOjE2MTcxNjQ0OTN9.KhBze5NgRx-IafhABIgHX1X0eybgnkel33f2sB82bDU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/Cliente/Autenticado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Cliente",
+								"Autenticado"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Cadastro Cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDQ5MywiZXhwIjoxNjE3MTY2MjkzLCJpYXQiOjE2MTcxNjQ0OTN9.KhBze5NgRx-IafhABIgHX1X0eybgnkel33f2sB82bDU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 0,\r\n    \"IsAtivo\": true,\r\n    \"Nome\": \"Sérgio Paiva\",\r\n    \"Email\": \"sha_paiva@hotmail.com\",\r\n    \"Senha\": \"Paiva123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/Cliente/Cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Cliente",
+								"Cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDk0MCwiZXhwIjoxNjE3MTY2NzQwLCJpYXQiOjE2MTcxNjQ5NDB9.sY5z--0ofovXTUXWpcxC0jjxBIFGcLfdCcePs04vlAI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/Cliente/Listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Cliente",
+								"Listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDk0MCwiZXhwIjoxNjE3MTY2NzQwLCJpYXQiOjE2MTcxNjQ5NDB9.sY5z--0ofovXTUXWpcxC0jjxBIFGcLfdCcePs04vlAI",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Sérgio Paiva\",\r\n    \"email\": \"sha_paiva@hotmail.com\",\r\n    \"senha\": \"Paiva123\",\r\n    \"id\": 3,\r\n    \"isAtivo\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/Cliente/Excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Cliente",
+								"Excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDk0MCwiZXhwIjoxNjE3MTY2NzQwLCJpYXQiOjE2MTcxNjQ5NDB9.sY5z--0ofovXTUXWpcxC0jjxBIFGcLfdCcePs04vlAI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Administrador Teste\",\r\n    \"email\": \"admin@email.com.br\",\r\n    \"senha\": \"admin@123\",\r\n    \"id\": 1,\r\n    \"isAtivo\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/Cliente/Atualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Cliente",
+								"Atualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Cliente por Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDk0MCwiZXhwIjoxNjE3MTY2NzQwLCJpYXQiOjE2MTcxNjQ5NDB9.sY5z--0ofovXTUXWpcxC0jjxBIFGcLfdCcePs04vlAI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/Cliente/BuscarPorId?Id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Cliente",
+								"BuscarPorId"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Anúncio",
+			"item": [
+				{
+					"name": "Listar Anúncio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro Anúncio",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDk0MCwiZXhwIjoxNjE3MTY2NzQwLCJpYXQiOjE2MTcxNjQ5NDB9.sY5z--0ofovXTUXWpcxC0jjxBIFGcLfdCcePs04vlAI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Descricao",
+									"value": "Anúncio Teste",
+									"type": "text"
+								},
+								{
+									"key": "ImageFile",
+									"type": "file",
+									"src": "/C:/Users/sha_p/Área de Trabalho/Screenshot_1.jpg"
+								},
+								{
+									"key": "IsAtivo",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "Latitude",
+									"value": "-23.001977147303663",
+									"type": "text"
+								},
+								{
+									"key": "Longitude",
+									"value": "-47.137935790265885",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/Anuncio/Cadastrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Anuncio",
+								"Cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro Anúncio Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDk0MCwiZXhwIjoxNjE3MTY2NzQwLCJpYXQiOjE2MTcxNjQ5NDB9.sY5z--0ofovXTUXWpcxC0jjxBIFGcLfdCcePs04vlAI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Descricao",
+									"value": "Anúncio Teste Edição",
+									"type": "text"
+								},
+								{
+									"key": "ImageFile",
+									"type": "file",
+									"src": "/C:/Users/sha_p/Área de Trabalho/Screenshot_1.jpg"
+								},
+								{
+									"key": "IsAtivo",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "Latitude",
+									"value": "-23.001977147303663",
+									"type": "text"
+								},
+								{
+									"key": "Longitude",
+									"value": "-47.137935790265885",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/Anuncio/Atualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Anuncio",
+								"Atualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Anúncio",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDk0MCwiZXhwIjoxNjE3MTY2NzQwLCJpYXQiOjE2MTcxNjQ5NDB9.sY5z--0ofovXTUXWpcxC0jjxBIFGcLfdCcePs04vlAI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/Anuncio/Excluir?Id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Anuncio",
+								"Excluir"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Anúncio por Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDk0MCwiZXhwIjoxNjE3MTY2NzQwLCJpYXQiOjE2MTcxNjQ5NDB9.sY5z--0ofovXTUXWpcxC0jjxBIFGcLfdCcePs04vlAI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/Anuncio/BuscarPorId?Id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Anuncio",
+								"BuscarPorId"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Anúncio por Localização",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbS5iciIsIm5iZiI6MTYxNzE2NDk0MCwiZXhwIjoxNjE3MTY2NzQwLCJpYXQiOjE2MTcxNjQ5NDB9.sY5z--0ofovXTUXWpcxC0jjxBIFGcLfdCcePs04vlAI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/Anuncio/BuscarPorLocalizacao?latitude=-23.001977147303660&longitude=-47.137935790265880",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Anuncio",
+								"BuscarPorLocalizacao"
+							],
+							"query": [
+								{
+									"key": "latitude",
+									"value": "-23.001977147303660"
+								},
+								{
+									"key": "longitude",
+									"value": "-47.137935790265880"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
