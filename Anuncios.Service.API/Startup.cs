@@ -12,7 +12,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Net;
 using System.Text;
 
 namespace Anuncio.Servico.API
@@ -30,9 +29,8 @@ namespace Anuncio.Servico.API
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = Configuration.GetConnectionString("default");
-            var ipLocalHost = Dns.GetHostEntry(Dns.GetHostName()).AddressList[0].ToString();
-            connection = connection.Replace("@serverDB", ipLocalHost);
             services.AddDbContext<SqlContext>(options => { options.UseSqlServer(connection); options.EnableSensitiveDataLogging(); });
+
             InjectorDependencies.Register(services);
             services.AddAutoMapper(x => x.AddProfile(new MappingEntity()));
             services.AddCors();
@@ -80,7 +78,7 @@ namespace Anuncio.Servico.API
                       new string[] { }
                     }
                   });
-             });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
