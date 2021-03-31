@@ -11,8 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using Microsoft.OpenApi.Models;
+using System.Net;
+using System.Text;
 
 namespace Anuncio.Servico.API
 {
@@ -29,6 +30,8 @@ namespace Anuncio.Servico.API
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = Configuration.GetConnectionString("default");
+            var ipLocalHost = Dns.GetHostEntry(Dns.GetHostName()).AddressList[0].ToString();
+            connection = connection.Replace("@serverDB", ipLocalHost);
             services.AddDbContext<SqlContext>(options => { options.UseSqlServer(connection); options.EnableSensitiveDataLogging(); });
             InjectorDependencies.Register(services);
             services.AddAutoMapper(x => x.AddProfile(new MappingEntity()));
@@ -56,7 +59,7 @@ namespace Anuncio.Servico.API
             });
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API Anúncios", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API AnÃºncios", Version = "v1" });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,
@@ -107,7 +110,7 @@ namespace Anuncio.Servico.API
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Anúncios");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API AnÃºncios");
             });
 
             app.UseEndpoints(endpoints =>
